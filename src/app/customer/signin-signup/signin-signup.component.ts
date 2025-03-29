@@ -112,5 +112,36 @@ export class SigninSignupComponent {
     });
   }
 
-  onSubmitSignIn() {}
+  onSubmitSignIn() {
+    this.loginService
+      .authLogin(
+        this.signInFormValue.userEmail,
+        this.signInFormValue.userPassword
+      )
+      .subscribe(
+        (data) => {
+          this.user_data = data;
+          if (this.user_data.length == 1) {
+            if (this.user_data[0].role == 'seller') {
+              sessionStorage.setItem('user_session_id', this.user_data[0].id);
+              sessionStorage.setItem('role', this.user_data[0].role);
+              this.router.navigateByUrl('/seller-dashboard');
+            } else if (this.user_data[0].role == 'buyer') {
+              sessionStorage.setItem('user_session_id', this.user_data[0].id);
+              sessionStorage.setItem('role', this.user_data[0].role);
+              this.router.navigateByUrl('/buyer-dashboard');
+            } else {
+              alert('Invalid Login Details');
+            }
+          } else {
+            alert('Invalid ');
+          }
+          console.log('User data', this.user_data);
+        },
+        (error) => {
+          alert('Invalid Login Details');
+          console.log('My Error', error);
+        }
+      );
+  }
 }
