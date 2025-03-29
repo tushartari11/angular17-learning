@@ -181,6 +181,33 @@
       "password": "Test1234!",
       "role": "buyer",
       "uploadPhoto": "C:\\fakepath\\MySignature.jpg"
+    },
+    {
+      "id": "61a7",
+      "aboutYou": "Seller Profile ",
+      "age": 41,
+      "agreetc": true,
+      "dob": "1983-07-15",
+      "email": "tushaseller@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "arkad",
+        "addLine2": "c wing",
+        "city": "Mumbai",
+        "state": "...",
+        "zipCode": "400042"
+      },
+      "language": [
+        "English",
+        "Hindi",
+        "Other"
+      ],
+      "mobNumber": "9820224832",
+      "name": "TusharSeller",
+      "password": "Seller123",
+      "role": "seller",
+      "uploadPhoto": "C:\\fakepath\\MySignature.jpeg"
     }
   ],
   "products": [
